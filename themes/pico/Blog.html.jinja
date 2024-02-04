@@ -12,7 +12,7 @@
 <article>
   <h3><a href="{{ page.url }}">{{ page.headline }}</a></h3>
   {% with data = page %}
-  {% include "./partials/blogposting-metadata.html" %}
+  {% include "./partials/blogposting-metadata.html.jinja" %}
   {% endwith %}
   <p>{{ page.abstract }}</p>
   <img src="{{page.thumbnailUrl}}" loading="lazy" style="max-height: 300px;">
