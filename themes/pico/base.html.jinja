@@ -24,13 +24,32 @@
     /* Header */
     .hero {
       background-color: #394046;
-      background-image: url("/images/marek-piwnicki-jjNcP78A8XE-unsplash.jpg");
       background-position: center;
       background-size: cover;
     }
 
+    {% for size in settings.IMAGE_WIDTHS %}
+    @media(max-width: {{size}}px){% if loop.index0 > 0 %} and (min-width: {{settings.IMAGE_WIDTHS[loop.index0 - 1] + 1}}px){% endif %} {
+      .hero {
+        background-image: url("/images/marek-piwnicki-jjNcP78A8XE-unsplash-{{size}}.jpg");
+      }
+    }
+    {% endfor %}
+
+    @media(min-width: {{settings.IMAGE_WIDTHS[-1] + 1}}px) {
+      .hero {
+        background-image: url("/images/marek-piwnicki-jjNcP78A8XE-unsplash.jpg");
+      }
+    }
+
     header {
       padding: var(--spacing-company) 0;
+    }
+
+    header> :last-child {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
     }
 
     header hgroup> :last-child {
@@ -65,18 +84,21 @@
     <nav class="container-fluid">
       <ul>
         <li>
-          <a href="./" class="contrast"><strong>Blurry Themes</strong></a>
+          <a href="/" class="contrast"><strong>Blurry Themes</strong></a>
         </li>
       </ul>
       <ul>
         <li>
-          <a href="https://github.com/blurry-dev/blurry" class="contrast">Blurry GitHub</a>
+          <a href="/blog" class="contrast">Blog</a>
+        </li>
+        <li>|</li>
+        <li>
+          <a href="https://github.com/blurry-dev/blurry" class="contrast" target="_blank">GitHub</a>
         </li>
         <li>
-          <a href="https://blurry-docs.netlify.app/" class="contrast">Blurry Docs</a>
+          <a href="https://blurry-docs.netlify.app/" class="contrast" target="_blank">Docs</a>
         </li>
-        <li><a href='https://ko-fi.com/F1F5380W2' target='_blank'><img height='36' style='border:0px;height:36px;'
-              src='https://storage.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+        <li>
         </li>
       </ul>
     </nav>
@@ -89,7 +111,10 @@
             href="https://unsplash.com/photos/a-long-exposure-photo-of-a-wave-in-the-night-sky-jjNcP78A8XE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash.</a>
         </p>
       </hgroup>
-      <p><a href="https://github.com/blurry-dev/blurry" role="button" class="secondary">Get Blurry →</a></p>
+      <p>
+        <a href="https://ko-fi.com/F1F5380W2" role="button" class="contrast" target="_blank">Buy Me a Coffee ☕</a>
+        <a href="https://github.com/blurry-dev/blurry" role="button" class="secondary">Get Blurry →</a>
+      </p>
     </header>
   </div>
   <!-- ./ Hero -->
