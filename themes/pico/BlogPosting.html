@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}{{ headline }}{% endblock %}
+{% block description %}{{ abstract}}{% endblock %}
+
+{% block body %}
+{{ body|safe }}
+
+{% if dateModified %}
+{% include "./partials/last-updated.html" %}
+{% endif %}
+</article>
+{% endblock %}

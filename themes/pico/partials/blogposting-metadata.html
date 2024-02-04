@@ -1,0 +1,7 @@
+<div>
+  <small>
+    🗓 <time datetime="{{ data.datePublished }}">{{ data.datePublished }}</time> ·
+    📁 {{ data.articleSection }} ·
+    🏷 {% for keyword in data.keywords.split(',') %} {{keyword}}{% if not loop.last %}, {% endif %}{% endfor %}
+  </small>
+</div>

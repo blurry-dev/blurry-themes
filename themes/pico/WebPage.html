@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}{{ name }}{% endblock %}
+
+{% block body %}
+{{ body|safe }}
+
+{% if dateModified %}
+{% include "./partials/last-updated.html" %}
+{% endif %}
+{% endblock %}

@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "blurry-themes"
+version = "0.1.0"
+description = "Themes for Blurry, a static site generator"
+authors = ["John Franey <1728528+johnfraney@users.noreply.github.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+blurry-cli = "0.5.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

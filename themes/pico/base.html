@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>{% block title %}{% endblock %} · {{ sourceOrganization.name }}</title>
+
+  <link rel="canonical" href="{{ url }}">
+  <script type="application/ld+json">{{ schema_data|safe }}</script>
+  {{ open_graph_tags|safe }}
+  <meta name="description" content="{{ abstract|safe}}">
+
+  <!-- Pico.css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.0-rc4/css/pico.min.css" />
+
+  <style>
+    /* Global CSS variables */
+    :root {
+      --spacing-company: 3rem;
+    }
+
+    /* Header */
+    .hero {
+      background-color: #394046;
+      background-image: url("/images/marek-piwnicki-jjNcP78A8XE-unsplash.jpg");
+      background-position: center;
+      background-size: cover;
+    }
+
+    header {
+      padding: var(--spacing-company) 0;
+    }
+
+    header hgroup> :last-child {
+      color: var(--pico-contrast);
+      font-weight: 300;
+    }
+
+    header hgroup {
+      margin-bottom: var(--spacing-company);
+    }
+
+    header hgroup a {
+      color: var(--pico-contrast);
+      text-decoration-color: var(--pico-contrast);
+    }
+
+    /* Aside nav */
+    aside img {
+      margin-bottom: 0.25rem;
+    }
+
+    aside p {
+      margin-bottom: var(--spacing-company);
+      line-height: 1.25;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Hero -->
+  <div class="hero" data-theme="dark">
+    <nav class="container-fluid">
+      <ul>
+        <li>
+          <a href="./" class="contrast"><strong>Blurry Themes</strong></a>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="https://github.com/blurry-dev/blurry" class="contrast">Blurry GitHub</a>
+        </li>
+        <li>
+          <a href="https://blurry-docs.netlify.app/" class="contrast">Blurry Docs</a>
+        </li>
+        <li><a href='https://ko-fi.com/F1F5380W2' target='_blank'><img height='36' style='border:0px;height:36px;'
+              src='https://storage.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+        </li>
+      </ul>
+    </nav>
+    <header class="container">
+      <hgroup>
+        <h1>Pico</h1>
+        <p>A Blurry theme built using <a href="https://picocss.com/">Pico.css</a>. Photo by <a
+            href="https://unsplash.com/@marekpiwnicki?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Marek
+            Piwnicki</a> on <a
+            href="https://unsplash.com/photos/a-long-exposure-photo-of-a-wave-in-the-night-sky-jjNcP78A8XE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash.</a>
+        </p>
+      </hgroup>
+      <p><a href="https://github.com/blurry-dev/blurry" role="button" class="secondary">Get Blurry →</a></p>
+    </header>
+  </div>
+  <!-- ./ Hero -->
+
+  <!-- Main -->
+  <main class="container">
+    {% block body %}{% endblock %}
+  </main>
+  <!-- ./ Main -->
+
+  <!-- Footer -->
+  <footer class="container">
+    <small>Built with <a href="https://picocss.com">Pico</a> •
+      Powered by <a href="https://github.com/blurry-dev/blurry">Blurry</a></small>
+  </footer>
+  <!-- ./ Footer -->
+
+</body>
+
+</html>
