@@ -6,6 +6,8 @@
 
 ### Pico
 
+A theme using [Pico.css](https://picocss.com/).
+
 ![Pico theme](./docs/pico-screenshot.png)
 
 ## Contributing
