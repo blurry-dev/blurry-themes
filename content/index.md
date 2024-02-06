@@ -43,6 +43,10 @@ These should all look great:
 1. ~~Strikethroughs~~
     - Indented list items
 
+> Yep, they look groovy.
+>
+> - John
+
 ### Code
 
 #### Inline
