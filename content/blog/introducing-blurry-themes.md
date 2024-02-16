@@ -33,4 +33,4 @@ But the documentation theme is very much single-purpose and lacks the "wow" fact
 ### Answer 3: swankier demo
 
 Building on Answer 2, good-looking themes can make Blurry a more viable choice for people looking for a static site generator.
-In general, seeing a clean website built with a library can help build confidence in that library.
+In general, seeing a clean website built with a static site generator can help build confidence in that static site generator.
